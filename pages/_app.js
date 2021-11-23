@@ -10,10 +10,12 @@ function MyApp({ Component, pageProps }) {
 
   useEffect(() => {
     if(user){
+      console.log('user auth is ',user);
       db.collection('users').doc(user.uid).set({ 
         email:user.email,
         lastSeen: firebase.firestore.FieldValue.serverTimestamp(),
         photoURL:user.photoURL,
+        public:true,
       },
        {merge:true},
        )

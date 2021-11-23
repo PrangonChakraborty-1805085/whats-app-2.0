@@ -76,6 +76,7 @@ function ChatScreen({chat,messages}) {
            timestamp:firebase.firestore.FieldValue.serverTimestamp(),
            message:input,
            user:user.email,
+           permitted:receipientEmail,
            photoURL:user.photoURL,
        })
 
